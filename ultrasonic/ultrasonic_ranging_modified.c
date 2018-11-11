@@ -1,16 +1,15 @@
 /*****************************************************************************
-*  Filename        : ultrasonic_ranging.c
+*  Filename        : ultrasonic_ranging_modified.c
 *  Original Author : SunFounder Electronics
 *  Modified By     : Eric McDaniel
 *  Date            : November 9th, 2018
 *  Description     : This file was originally sourced from SunFounder
-* 				     Electronics, Sensor Kit V2.0 for Raspberry Pi B+
+*  		     Electronics, Sensor Kit V2.0 for Raspberry Pi B+
 *                    The original code was only for "Lesson 25", which
-*  				     would print to the console the distance reading
-* 				     from the ultrasonic sensor. This source was modified
-* 					 to accomodate an LED in GPIO 27 which would strobe
-* 					 within a predefined distance.
-* 
+*  		     would print to the console the distance reading
+*  		     from the ultrasonic sensor. This source was modified
+*  		     to accomodate an LED in GPIO 27 which would strobe
+*   		     within a predefined distance.* 
 *****************************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -32,7 +31,7 @@ float disMeasure(void)
 	struct timeval tv1;
 	struct timeval tv2;
 	long time1, time2;
-    float dis;
+    	float dis;
 
 	digitalWrite(Trig, LOW);
 	delayMicroseconds(2);
@@ -78,8 +77,8 @@ int main(void)
 		printf("setup wiringPi failed !");
 		return 1; 
 	}
-
 	ultraInit();
+	
 	printf("Please enter the distance in cm to trigger alarm: ");
 	scanf("%d", &input);	
 	printf("\nHome security device is now active!\n(Press CTRL + C to exit)\n\n");
@@ -105,6 +104,5 @@ int main(void)
 		}
 		dis = disMeasure();
 	}
-
 	return 0;
-}
+} // end main()
