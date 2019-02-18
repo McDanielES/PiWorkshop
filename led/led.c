@@ -1,8 +1,8 @@
 /*****************************************************************************
 *  Filename        : led.c
 *  Original Author : SunFounder Electronics
-*  Modified By     : Eric McDaniel
-*  Date            : November 9th, 2018
+*  Modified By      : Eric McDaniel
+*  Date            : November 9th, 2018, revised February 17th, 2019
 *  Description     : This file was originally sourced from SunFounder
 *  		     Electronics, Sensor Kit V2.0 for Raspberry Pi B+
 *                    The original code was only for "Lesson 1", which
@@ -25,7 +25,7 @@ int main(void)
 	
 	pinMode(LedPin, OUTPUT);	
 	int loop = 0;
-	int TIME = 0;
+	int TIME = 300; //Milliseconds
 
 	while (loop < 5)
 	{
